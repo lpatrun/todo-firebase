@@ -1,0 +1,100 @@
+.heder {
+  margin: 30px auto 0px auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.tableClass {
+  margin: 0 auto;
+  table-layout: auto;
+  width: 60%;
+  background-color: white;
+  color: #333;
+  padding: 25px;
+  border-collapse: collapse;
+}
+
+.tableClass th,
+.tableClass td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+a,
+a:active,
+a:focus,
+a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.tableHead {
+  font-size: 20px;
+}
+
+.selStyle {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.selStyle::after {
+  content: "\25BC";
+  position: absolute;
+  top: -8px;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.selectorStyle {
+  color: #ff6f47;
+  cursor: pointer;
+  width: 12rem;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+.selectorStyle option {
+  padding: 10px;
+}
+
+.formStyle {
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.singleInput  {
+  padding: 8px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background: white;
+}
+
+::placeholder {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.dateSort:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

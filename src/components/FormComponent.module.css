@@ -1,0 +1,36 @@
+.addTodoForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.formInput,
+.formButton {
+  padding: 8px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background: white;
+}
+
+::placeholder {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.formInput {
+  margin-right: 10px;
+}
+
+.formButton {
+  color: #ff6f47;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formButton:hover {
+  background: #ff6f47;
+  color: white;
+}

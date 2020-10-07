@@ -1,0 +1,45 @@
+.rowStyling {
+  line-height: 35px;
+}
+
+.btnStyling {
+  cursor: pointer;
+  padding: 4px;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-right: 5px;
+}
+
+.btnEdit {
+  background: #666;
+  color: #f7fffe;
+}
+
+.btnEdit:hover {
+  background: #ebebeb;
+  color: #666;
+}
+
+.btnDelete {
+  background: #ebebeb;
+  color: #666;
+}
+
+.btnDelete:hover {
+  color: #ebebeb;
+  background: #666;
+}
+
+.inputStyling {
+  border-radius: 0px;
+  border: 1px solid #9999;
+  padding: 3px;
+  width: 90%;
+}
+
+.completedStyling:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

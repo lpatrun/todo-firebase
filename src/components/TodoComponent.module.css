@@ -1,0 +1,23 @@
+.singleTodo {
+  margin: 0px auto;
+  width: 50%;
+  background-color: white;
+  color: black;
+  padding: 25px;
+}
+
+.singleTodo p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.goHomeBtn  {
+  margin-top: 25px;
+  outline: none;
+  border: none;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: darkgray;
+  cursor: pointer;
+}
