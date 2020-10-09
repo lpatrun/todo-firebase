@@ -1,18 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { validAuth } from '../store/actions/todoActions';
+import allActions from '../../store/actions/index';
 import classes from './SignIn.module.css';
 
-function SignIn (props: any) {
+function SignIn() {
+  const history = useHistory();
 
-  let history = useHistory();
+  const dispatch = useDispatch();
 
-  const handleSignIn = (e: any) => {
+  const handleSignIn = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    props.validAuth();
+    dispatch(allActions.userActions.validAuth());
     history.push('/');
-  }
+  };
 
   return (
     <div className={classes.signInPageStyling}>
@@ -24,13 +25,13 @@ function SignIn (props: any) {
         <button type="submit">Sign in</button>
       </form>
     </div>
-  )
+  );
 }
 
-const mapDispatchToProps = (dispatch: (arg0: { type: string; }) => void) => {
-  return {
-    validAuth: () => { dispatch(validAuth()) }
-  }
+export default {
+  routeProps: {
+    path: '/signin',
+    component: SignIn
+  },
+  name: SignIn
 }
-
-export default connect(null, mapDispatchToProps)(SignIn);
