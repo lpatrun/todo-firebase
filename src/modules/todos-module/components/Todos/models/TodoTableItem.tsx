@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import allActions from '../../../store/actions';
-import { Todo } from '../../../store/reducers/todoReducer';
+import allActions from '../../../../../store/actions';
+import { Todo } from '../../../redux/todoReducer';
 import classes from './TodoTableItem.module.css';
 
 interface Props {

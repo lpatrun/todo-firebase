@@ -2,11 +2,11 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import HomePage from '../HomePage/HomePage';
-import SignIn from '../SignIn/SignIn';
-import SignUp from '../SignUp/SignUp';
-import LogoutPage from '../Logout/LogoutPage';
-import TodoList from '../Todos/TodoList';
-import SingleTodo from '../SingleTodo/SingleTodo';
+import SignIn from '../auth/components/SignIn/SignIn';
+import SignUp from '../auth/components/SignUp/SignUp';
+import LogoutPage from '../auth/components/Logout/LogoutPage';
+import TodoList from '../todos-module/components/Todos/TodoList';
+import SingleTodo from '../todos-module/components/SingleTodo/SingleTodo';
 import { useSelector } from 'react-redux';
 import { RootReducer } from '../../store/reducers';
 

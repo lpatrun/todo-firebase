@@ -1,28 +1,28 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import allActions from '../../store/actions/index';
-import classes from './SignUp.module.css';
+import allActions from '../../../../store/actions';
+import classes from './SignIn.module.css';
 
-function SignUp() {
+function SignIn() {
   const history = useHistory();
 
   const dispatch = useDispatch();
 
-  const handleSignUp = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignIn = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(allActions.userActions.validAuth());
     history.push('/');
   };
 
   return (
-    <div className={classes.signUpPageStyling}>
-      <form onSubmit={handleSignUp}>
+    <div className={classes.signInPageStyling}>
+      <form onSubmit={handleSignIn}>
         <p>Username</p>
         <input type="text" placeholder="Username..." />
         <p>Password</p>
         <input type="password" placeholder="Pasword..." />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign in</button>
       </form>
     </div>
   );
@@ -30,8 +30,8 @@ function SignUp() {
 
 export default {
   routeProps: {
-    path: '/signup',
-    component: SignUp,
+    path: '/signin',
+    component: SignIn,
   },
-  name: SignUp,
+  name: SignIn,
 };

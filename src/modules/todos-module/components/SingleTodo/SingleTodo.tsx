@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { RootReducer } from '../../store/reducers';
-import { Todo } from '../../store/reducers/todoReducer';
+import { RootReducer } from '../../../../store/reducers';
+import { Todo } from '../../redux/todoReducer';
 import classes from './SingleTodo.module.css';
 
 interface ParamTypes {

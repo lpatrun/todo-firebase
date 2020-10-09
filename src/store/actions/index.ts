@@ -1,5 +1,5 @@
-import todoActions from './todoActions';
-import userActions from './userActions';
+import todoActions from '../../modules/todos-module/redux/todoActions';
+import userActions from '../../modules/auth/redux/userActions';
 
 const allActions = {
   todoActions,

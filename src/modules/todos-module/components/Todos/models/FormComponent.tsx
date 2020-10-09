@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import allActions from '../../../store/actions/index';
+import allActions from '../../../../../store/actions/index';
 
 import classes from './FormComponent.module.css';
 

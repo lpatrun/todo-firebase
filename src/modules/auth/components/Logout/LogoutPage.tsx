@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import allActions from '../../store/actions/index';
+import allActions from '../../../../store/actions';
 import classes from './LogoutPage.module.css';
 
 function LogoutPage() {

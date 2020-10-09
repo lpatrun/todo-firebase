@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import FormComponent from './models/FormComponent';
 import TodoTableItem from './models/TodoTableItem';
 import classes from './TodoList.module.css';
-import { RootReducer } from '../../store/reducers';
-import { Todo } from '../../store/reducers/todoReducer';
+import { RootReducer } from '../../../../store/reducers';
+import { Todo } from '../../redux/todoReducer';
 
 function TodoList() {
   const todos: Todo[] = useSelector<RootReducer, Todo[]>(

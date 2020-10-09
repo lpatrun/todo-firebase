@@ -1,5 +1,5 @@
-import todoReducer, { State } from './todoReducer';
-import userReducer, { UserState } from './userReducer';
+import todoReducer, { State } from '../../modules/todos-module/redux/todoReducer';
+import userReducer, { UserState } from '../../modules/auth/redux/userReducer';
 import { combineReducers } from 'redux';
 
 export interface RootReducer {
