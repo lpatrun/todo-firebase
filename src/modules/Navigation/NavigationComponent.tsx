@@ -11,7 +11,9 @@ const NavigationComponent = () => {
   return (
     <nav className="navigetion">
       <div>
-        <NavLink exact to="/">Todo home</NavLink>
+        <NavLink exact to="/">
+          Todo home
+        </NavLink>
       </div>
       <div>
         {!isAuth && (

@@ -9,7 +9,7 @@ export interface RootReducer {
 
 const rootReducer = combineReducers({
   todoReducer,
-  userReducer
+  userReducer,
 });
 
 export default rootReducer;

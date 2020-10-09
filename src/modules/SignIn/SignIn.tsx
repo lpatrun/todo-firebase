@@ -31,7 +31,7 @@ function SignIn() {
 export default {
   routeProps: {
     path: '/signin',
-    component: SignIn
+    component: SignIn,
   },
-  name: SignIn
-}
+  name: SignIn,
+};

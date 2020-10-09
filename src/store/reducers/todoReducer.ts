@@ -1,5 +1,5 @@
 export interface State {
-  todos: Todo[]  
+  todos: Todo[];
 }
 
 export interface Todo {
@@ -46,12 +46,12 @@ const initialState = {
 const d = new Date();
 
 const getDate = (): string => {
-  return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}.`
-}
+  return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}.`;
+};
 
 const randomId = (): string => {
   return Math.random().toString(36).substr(2, 9);
-}
+};
 
 type Action = { type: string; id: string; title: string; description: string };
 
@@ -78,12 +78,12 @@ const todosReducer = (state: State = initialState, action: Action) => {
         title: action.title,
         description: action.description,
         doc: getDate(),
-        completed: false
+        completed: false,
       };
 
       return {
         ...state,
-        todos: [...state.todos, newTodo]
+        todos: [...state.todos, newTodo],
       };
 
     case 'SAVE_CHANGES':
@@ -95,7 +95,7 @@ const todosReducer = (state: State = initialState, action: Action) => {
 
       return {
         ...state,
-        todos: updatedTodos
+        todos: updatedTodos,
       };
 
     case 'TOGGLE_COMPLETION':
@@ -105,7 +105,7 @@ const todosReducer = (state: State = initialState, action: Action) => {
 
       return {
         ...state,
-        todos: changeStatusofTodo
+        todos: changeStatusofTodo,
       };
     default:
       return state;

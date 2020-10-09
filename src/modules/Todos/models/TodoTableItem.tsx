@@ -6,7 +6,7 @@ import { Todo } from '../../../store/reducers/todoReducer';
 import classes from './TodoTableItem.module.css';
 
 interface Props {
-  todo: Todo
+  todo: Todo;
 }
 
 function TodoTableItem(props: Props) {

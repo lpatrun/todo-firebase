@@ -25,7 +25,7 @@ function LogoutPage() {
 export default {
   routeProps: {
     path: '/logout',
-    component: LogoutPage
+    component: LogoutPage,
   },
-  name: LogoutPage
-}
+  name: LogoutPage,
+};

@@ -11,8 +11,9 @@ interface ParamTypes {
 
 function SingleTodo() {
   const { todo_id } = useParams<ParamTypes>();
-  const todo: Todo = useSelector<RootReducer, Todo>((state) =>
-    state.todoReducer.todos.find((todo: Todo) => todo.id === todo_id)!
+  const todo: Todo = useSelector<RootReducer, Todo>(
+    (state) =>
+      state.todoReducer.todos.find((todo: Todo) => todo.id === todo_id)!
   );
 
   return (
@@ -43,7 +44,7 @@ function SingleTodo() {
 export default {
   routeProps: {
     path: '/todos/:todo_id',
-    component: SingleTodo
+    component: SingleTodo,
   },
-  name: SingleTodo
-}
+  name: SingleTodo,
+};

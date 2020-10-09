@@ -7,7 +7,9 @@ import { RootReducer } from '../../store/reducers';
 import { Todo } from '../../store/reducers/todoReducer';
 
 function TodoList() {
-  const todos: Todo[] = useSelector<RootReducer, Todo[]>((state) => state.todoReducer.todos);
+  const todos: Todo[] = useSelector<RootReducer, Todo[]>(
+    (state) => state.todoReducer.todos
+  );
 
   const [selectfilter, setSelectFilter] = useState('all');
   const [inputFilter, setInputFilter] = useState('');
@@ -152,7 +154,7 @@ function TodoList() {
 export default {
   routeProps: {
     path: '/todos',
-    component: TodoList
+    component: TodoList,
   },
-  name: TodoList
-}
+  name: TodoList,
+};

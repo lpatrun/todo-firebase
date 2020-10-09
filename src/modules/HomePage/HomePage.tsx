@@ -16,18 +16,18 @@ function HomePage() {
       {isAuth ? (
         <p>Click on Todos to see your tasks</p>
       ) : (
-          <>
-            <p>To continue, please Sign in or Sign up</p>
-            <div className={classes.buttonsContainer}>
-              <Link to="/signin">
-                <button className={classes.signInBtn}>Sign In</button>
-              </Link>
-              <Link to="/signup">
-                <button className={classes.signUpBtn}>Sign Up</button>
-              </Link>
-            </div>
-          </>
-        )}
+        <>
+          <p>To continue, please Sign in or Sign up</p>
+          <div className={classes.buttonsContainer}>
+            <Link to="/signin">
+              <button className={classes.signInBtn}>Sign In</button>
+            </Link>
+            <Link to="/signup">
+              <button className={classes.signUpBtn}>Sign Up</button>
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -35,7 +35,7 @@ function HomePage() {
 export default {
   routeProps: {
     path: '/',
-    component: HomePage
+    component: HomePage,
   },
-  name: HomePage
-}
+  name: HomePage,
+};

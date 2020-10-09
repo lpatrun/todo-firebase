@@ -17,7 +17,7 @@ function ErrorPage() {
 export default {
   routeProps: {
     path: '*',
-    component: ErrorPage
+    component: ErrorPage,
   },
-  name: ErrorPage
-}
+  name: ErrorPage,
+};
