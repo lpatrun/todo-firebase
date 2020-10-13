@@ -13,6 +13,7 @@ function FormComponent() {
   const toSaveTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (title && description) {
+
       dispatch(allActions.todoActions.addTodo(title, description));
       setTitle('');
       setDescription('');

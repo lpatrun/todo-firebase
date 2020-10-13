@@ -13,7 +13,7 @@ function TodoTableItem(props: Props) {
   const [editMode, setEditMode] = useState(false);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-
+ 
   const handleDelete = () => {
     dispatch(allActions.todoActions.deleteTodo(props.todo.id));
   };
@@ -26,13 +26,21 @@ function TodoTableItem(props: Props) {
 
   const handleSaveChanges = () => {
     dispatch(
-      allActions.todoActions.saveChanges(props.todo.id, title, description)
+      allActions.todoActions.saveChanges(props.todo.id, title, description, props.todo.doc, props.todo.completed)
     );
     setEditMode(false);
   };
 
   const handleToggleCompletion = () => {
-    dispatch(allActions.todoActions.toggleCompletion(props.todo.id));
+    dispatch(
+      allActions.todoActions.saveChanges(
+        props.todo.id,
+        props.todo.title,
+        props.todo.description,
+        props.todo.doc,
+        !props.todo.completed
+      )
+    )
   };
 
   const dispatch = useDispatch();
@@ -68,33 +76,33 @@ function TodoTableItem(props: Props) {
           </td>
         </tr>
       ) : (
-        <tr className={classes.rowStyling}>
-          <td>
-            <input
-              className={classes.inputStyling}
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </td>
-          <td>
-            <input
-              className={classes.inputStyling}
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </td>
-          <td>{props.todo.doc}</td>
-          <td>{props.todo.completed ? 'True' : 'False'}</td>
-          <td>
-            <button
-              onClick={handleSaveChanges}
-              className={`${classes.btnStyling} ${classes.btnEdit}`}
-            >
-              Save
+          <tr className={classes.rowStyling}>
+            <td>
+              <input
+                className={classes.inputStyling}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </td>
+            <td>
+              <input
+                className={classes.inputStyling}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </td>
+            <td>{props.todo.doc}</td>
+            <td>{props.todo.completed ? 'True' : 'False'}</td>
+            <td>
+              <button
+                onClick={handleSaveChanges}
+                className={`${classes.btnStyling} ${classes.btnEdit}`}
+              >
+                Save
             </button>
-          </td>
-        </tr>
-      )}
+            </td>
+          </tr>
+        )}
     </>
   );
 }

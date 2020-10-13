@@ -1,12 +1,32 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import FormComponent from './models/FormComponent';
 import TodoTableItem from './models/TodoTableItem';
 import classes from './TodoList.module.css';
 import { RootReducer } from '../../../../store/reducers';
 import { Todo } from '../../redux/todoReducer';
+import allActions from '../../../../store/actions';
+import firebase from '../../../../firebase';
+
 
 function TodoList() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const db = firebase.firestore()
+    return db.collection('todos').onSnapshot((snapshot) => {
+      const todosData: Todo[] = []
+      snapshot.forEach(doc => todosData.push(({
+        title: doc.data().title,
+        id: doc.id,
+        description: doc.data().description,
+        doc: doc.data().doc,
+        completed: doc.data().completed
+      })))
+      dispatch(allActions.todoActions.setTodos(todosData));
+    })
+  }, [dispatch])
+
   const todos: Todo[] = useSelector<RootReducer, Todo[]>(
     (state) => state.todoReducer.todos
   );
@@ -137,14 +157,14 @@ function TodoList() {
         </thead>
         <tbody>
           {todosAfterFilteringAndSorting().length ? (
-            todosAfterFilteringAndSorting().map((todo: any) => {
+            todosAfterFilteringAndSorting().map((todo: Todo) => {
               return <TodoTableItem todo={todo} key={todo.id} />;
             })
           ) : (
-            <tr>
-              <td colSpan={4}>No todos yet</td>
-            </tr>
-          )}
+              <tr>
+                <td colSpan={4}>No todos yet</td>
+              </tr>
+            )}
         </tbody>
       </table>
     </div>

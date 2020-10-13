@@ -21,6 +21,22 @@ const userReducer = (state: UserState = initialState, action: Action) => {
         isAuthenticated: false,
       };
 
+    case 'AUTH_START':
+      return {
+        ...state
+      }
+
+    case 'AUTH_SUCCESS':
+      console.log("Auth success")
+      return {
+        ...state
+      }
+
+    case 'AUTH_FAIL':
+      console.log('auth fail')
+      return {
+        ...state
+      }
     default:
       return state;
   }
