@@ -20,6 +20,7 @@ function SignUp() {
 
   return (
     <div className={classes.signUpPageStyling}>
+      <p>*hint no need to actually sign up, just type in email address and min of 6 letters in password field</p>
       <form onSubmit={handleSignUp}>
         <p>Username</p>
         <input

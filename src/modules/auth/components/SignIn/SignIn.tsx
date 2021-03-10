@@ -21,6 +21,7 @@ function SignIn() {
 
   return (
     <div className={classes.signInPageStyling}>
+      <p>*hint no need to actually sign in, just type in email address and min of 6 letters in password field</p>
       <form onSubmit={handleSignIn}>
         <p>Username</p>
         <input
